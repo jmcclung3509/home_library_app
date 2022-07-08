@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/nav.ejs') %>
+            <div class="container">
+                <div class="row">
+                    <h1> Add Book Page</h1>
+                    <form method="post" action="/books">
+
+                        <label for="bookName" class="form-label name-label">Name</label>
+                        <input type="text" name="bookName" class="form-control" id="bookName" required /></br>
+
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" name="description" class="form-control" id="description" required /></br>
+
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" name="author" class="form-control" id="author" required /></br>
+
+                        <label for="pageCount" class="form-label">Page Count</label>
+                        <input type="number" name="pageCount" class="form-control" id="pageCount" required /></br>
+
+
+
+                        <label for="publisher" class="form-label">Publisher</label>
+                        <input type="text" name="publisher" class="form-control" id="publisher" required /></br>
+
+                        <label for="publishDate" class="form-label">Date of Publication</label>
+                        <input type="text" name="publishDate" class="form-control" id="publishDate" /></br>
+
+
+                        <!-- <label for="createdAt" class="form-label">Created At</label>
+                    <input type="date" name="createdAt" class="form-control" id="createdAt" default="Date.now"
+                        required /></br> -->
+
+                        <label for="genre" class="form-label">Genre</label>
+                        <input type="text" name="genre" class="form-control" id="genre" /></br>
+
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="location" class="form-control" id="location" required /></br>
+
+
+                        <label for="status" class="form-label">Book Status</label>
+                        <input type="radio" name="status" value="IN" /> In
+                        <input type="radio" name="status" value="OUT" /> Out
+                        <input type="radio" name="status" value="NA" /> Not Available</br>
+                        <!-- <label for="cover" class="form-label">Cover</label>
+                    <input type="text" name="cover" class="form-control" id="cover" /></br> -->
+
+                        <button type="submit" class="btn btn-primary">Save New Book</button>
+                    </form>
+                </div>
+            </div>
+    </body>
+
+</html>

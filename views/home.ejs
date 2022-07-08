@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <div class="navigation">
+            <%- include('partials/nav.ejs') %>
+        </div>
+        <div class="container">
+            <div class="messages">
+                <% const messages=getMessages() %>
+                    <div class="success">
+                        <% if (messages.success) { %>
+                            <% messages.success.forEach((elem)=> { %>
+                                <div class="alert alert-sucess alert-dismissible" role="alert">
+                                    <%= elem %>
+                                </div>
+                                <% }) %>
+                                    <% } %>
+                    </div>
+                    <div class="fail">
+                        <% if (messages.fail) { %>
+                            <% messages.fail.forEach((elem)=> { %>
+                                <div class="alert alert-fail alert-dismissible" role="alert">
+                                    <%= elem %>
+                                </div>
+                                <% }) %>
+                                    <% } %>
+                    </div>
+            </div>
+        </div>
+        <div class="container">
+            <% if(data.length==0){ %>
+                <h4 class="text-muted"> There are no books in your library</h4>
+                <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
+                <% } %>
+                    <div class="row">
+                        <% data.forEach((book)=> { %>
+                            <div class="col col-12 col-md-6 col-lg-4">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <%= book.bookName %>
+                                        </h4>
+                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Author: </strong>
+                                            <%= book.author %>
+                                        </h6>
+
+                                        <h6 class="card-subtitle mb-2 text-muted"> <strong>Page Count:</strong>
+                                            <%= book.pageCount %> pages
+                                        </h6>
+                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Genre: </strong>
+                                            <%= book.genre %>
+                                        </h6>
+                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Status: </strong>
+                                            <%= book.status %>
+                                        </h6>
+
+                                        <p class="card-text"><strong>Description: </strong></br>
+                                            <%= book.description %>
+                                        </p>
+                                        <span class="badge text-bg-secondary">
+                                            <%= book.status %>
+                                        </span>
+                                        <a href="/books/delete/<%= book.id %>" class="card-link link-danger">Delete</a>
+                                        <a href="/books/edit/<%= book.id %>" class="card-link link-danger">Edit</a>
+                                        <!-- <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </div>
+        </div>
+
+
+
+        <!-- <%=JSON.stringify(data) %> -->
+
+
+    </body>
+    <style>
+        .navigation {
+            margin-bottom: 50px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            height: 300px;
+            margin-bottom: 50px;
+        }
+
+        .card-title {
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            margin-right: 15px;
+        }
+
+        .alert {
+            background-color: rgb(220, 240, 247);
+        }
+
+        .btn {
+            margin: 20px;
+        }
+    </style>
+
+</html>

@@ -9,15 +9,17 @@ const session = require('express-session')
 
 
 const app = express();
-const port = 3000;
+
+const PORT = process.env.PORT || 5001;
 app.use(flash())
 app.use(
     session({
         secret: 'secret',
     })
 )
-
-env.config();
+if (process.env.NODE_ENV != "production") {
+    env.config();
+}
 db.bootstrap();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
@@ -27,6 +29,6 @@ app.use('/', router);
 
 app.use('/books', bookRouter)
 
-app.listen(port, (req, res) => {
+app.listen(PORT, () => {
     console.log('Server is listening')
 })

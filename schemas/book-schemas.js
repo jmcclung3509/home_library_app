@@ -17,13 +17,6 @@ module.exports = mongoose.Schema({
         required: true
     },
     genre: String,
-    // cover: String,
-    // reviews: [
-    //     {
-    //         rating: { type: Number, reuqired: true },
-    //         comment: { type: String },
-    //         username: { type: String, required: true }
-    //     }
-    // ]
+
 
 })

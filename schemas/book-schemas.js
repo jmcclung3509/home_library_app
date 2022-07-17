@@ -7,8 +7,8 @@ module.exports = mongoose.Schema({
     author: { type: String, required: true },
     pageCount: { type: Number },
     location: { type: String, required: true },
-    publisher: { type: String, required: true },
-    publishDate: { type: String },
+    // publisher: { type: String, required: true },
+    // publishDate: { type: String },
     createdAt: { type: Date, default: Date.now },
     status: {
         type: String,

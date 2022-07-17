@@ -7,7 +7,7 @@
         <%- include('partials/nav.ejs') %>
             <div class="container">
                 <div class="row">
-                    <h1> Add Book Page</h1>
+                    <h2> Add a book to the library</h2>
                     <form method="post" action="/books">
 
                         <label for="bookName" class="form-label name-label">Name</label>
@@ -24,16 +24,16 @@
 
 
 
-                        <label for="publisher" class="form-label">Publisher</label>
+                        <!-- <label for="publisher" class="form-label">Publisher</label>
                         <input type="text" name="publisher" class="form-control" id="publisher" required /></br>
 
                         <label for="publishDate" class="form-label">Date of Publication</label>
-                        <input type="text" name="publishDate" class="form-control" id="publishDate" /></br>
+                        <input type="text" name="publishDate" class="form-control" id="publishDate" /></br> -->
 
 
-                        <!-- <label for="createdAt" class="form-label">Created At</label>
-                    <input type="date" name="createdAt" class="form-control" id="createdAt" default="Date.now"
-                        required /></br> -->
+                        <label for="createdAt" class="form-label">Created At</label>
+                        <input type="date" name="createdAt" class="form-control" id="createdAt" default="Date.now"
+                            required /></br>
 
                         <label for="genre" class="form-label">Genre</label>
                         <input type="text" name="genre" class="form-control" id="genre" /></br>
@@ -49,10 +49,41 @@
                         <!-- <label for="cover" class="form-label">Cover</label>
                     <input type="text" name="cover" class="form-control" id="cover" /></br> -->
 
-                        <button type="submit" class="btn btn-primary">Save New Book</button>
+                        <button type="submit" class="btn btn-success">Save New Book</button>
                     </form>
                 </div>
             </div>
     </body>
 
 </html>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+
+
+    .navigation {
+        margin-bottom: 50px;
+    }
+
+    .navbar {
+        padding: 20px;
+
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
+
+    .container {
+        margin-top: 50px;
+
+    }
+
+    .btn {
+        margin: 40px 0;
+        padding: 13px 20px;
+
+    }
+</style>

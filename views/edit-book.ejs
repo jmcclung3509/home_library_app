@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <!-- <%= JSON.stringify(data) %> -->
-                    <h1> Edit Book </h1>
+                    <h2> Edit a book </h2>
                     <form method="post" action="/books/edit/<%=data.id %>">
 
                         <label for="bookName" class="form-label">Name</label>
@@ -29,13 +29,13 @@
 
 
 
-                        <label for="publisher" class="form-label">Publisher</label>
+                        <!-- <label for="publisher" class="form-label">Publisher</label>
                         <input type="text" name="publisher" class="form-control" id="publisher" required
                             value="<%= data.publisher %>" /></br>
 
                         <label for="publishDate" class="form-label">Date of Publication</label>
                         <input type="text" name="publishDate" class="form-control" id="publishDate"
-                            value="<%= data.publishDate %>" /></br>
+                            value="<%= data.publishDate %>" /></br> -->
 
 
                         <!-- <label for="createdAt" class="form-label">Created At</label>
@@ -65,3 +65,31 @@
     </body>
 
 </html>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+
+    .navigation {
+        margin-bottom: 50px;
+    }
+
+    .navbar {
+        padding: 20px;
+
+    }
+
+    h2 {
+        margin-bottom: 25px;
+    }
+
+    .container {
+        margin-top: 50px;
+
+    }
+
+    .btn {
+        margin: 40px 0;
+        padding: 13px 20px;
+    }
+</style>

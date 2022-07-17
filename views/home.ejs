@@ -32,8 +32,10 @@
         <div class="container">
             <% if(data.length==0){ %>
                 <h4 class="text-muted"> There are no books in your library</h4>
+
                 <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
                 <% } %>
+                    <h2> Books in your library</h2>
                     <div class="row">
                         <% data.forEach((book)=> { %>
                             <div class="col col-12 col-md-6 col-lg-4">
@@ -42,28 +44,53 @@
                                         <h4 class="card-title">
                                             <%= book.bookName %>
                                         </h4>
-                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Author: </strong>
-                                            <%= book.author %>
-                                        </h6>
+                                        <div class="item">
+                                            <h6 class="card-subtitle mb-2 "><strong> Author: </strong> </h6>
+                                            <h6>
+                                                <%= book.author %>
+                                            </h6>
+                                        </div>
+                                        <div class="item">
+                                            <h6 class="card-subtitle mb-2 "> <strong>Page Count:</strong></h6>
+                                            <h6>
+                                                <%= book.pageCount %> pages
+                                            </h6>
+                                        </div>
+                                        <div class="item">
+                                            <h6 class="card-subtitle mb-2 "><strong> Genre: </strong></h6>
+                                            <h6>
+                                                <%= book.genre %>
+                                            </h6>
+                                        </div>
+                                        <div class="item">
+                                            <h6 class="card-subtitle mb-2"><strong> Location: </strong></h6>
+                                            <h6>
+                                                <%= book.location %>
+                                            </h6>
+                                        </div>
+                                        <div class="item">
+                                            <h6 class="card-subtitle mb-2 "><strong> Added: </strong></h6>
+                                            <h6>
+                                                <%=new Date().getMonth() + 1%>/<%= new Date().getDate() %>/<%=new
+                                                            Date().getFullYear()%>
+                                            </h6>
+                                        </div>
 
-                                        <h6 class="card-subtitle mb-2 text-muted"> <strong>Page Count:</strong>
-                                            <%= book.pageCount %> pages
-                                        </h6>
-                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Genre: </strong>
-                                            <%= book.genre %>
-                                        </h6>
-                                        <h6 class="card-subtitle mb-2 text-muted"><strong> Status: </strong>
-                                            <%= book.status %>
-                                        </h6>
 
-                                        <p class="card-text"><strong>Description: </strong></br>
+
+
+                                        <h6 class="card-text"><strong>Description: </strong></h6>
+                                        <p>
                                             <%= book.description %>
                                         </p>
-                                        <span class="badge text-bg-secondary">
-                                            <%= book.status %>
-                                        </span>
-                                        <a href="/books/delete/<%= book.id %>" class="card-link link-danger">Delete</a>
-                                        <a href="/books/edit/<%= book.id %>" class="card-link link-danger">Edit</a>
+                                        <div class="bottom-item">
+                                            <span class="badge text-bg-secondary">
+                                                <%= book.status %>
+                                            </span>
+                                            <a href="/books/delete/<%= book.id %>"
+                                                class="card-link link-danger">Delete</a>
+                                            <a href="/books/edit/<%= book.id %>" class="card-link ">Edit</a>
+                                        </div>
                                         <!-- <a href="#" class="card-link">Card link</a>
                   <a href="#" class="card-link">Another link</a> -->
                                     </div>
@@ -80,21 +107,46 @@
 
     </body>
     <style>
+        body {
+            background-color: whitesmoke;
+        }
+
         .navigation {
             margin-bottom: 50px;
         }
 
+        .navbar {
+            padding: 20px;
+
+        }
+
         .container {
             margin-top: 50px;
+
+        }
+
+        h2 {
+            margin-bottom: 40px;
         }
 
         .card {
-            height: 300px;
+            min-height: 350px;
+            height: fit-content;
             margin-bottom: 50px;
+            background-color: #F2E7DC;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .card-title {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
         }
 
         .badge {
@@ -107,6 +159,12 @@
 
         .btn {
             margin: 20px;
+        }
+
+        .bottom-item {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
         }
     </style>
 

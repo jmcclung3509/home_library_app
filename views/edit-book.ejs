@@ -52,9 +52,9 @@
 
 
                         <label for="status" class="form-label">Book Status</label>
-                        <input type="radio" name="status" value="IN" /> In
-                        <input type="radio" name="status" value="OUT" /> Out
-                        <input type="radio" name="status" value="NA" /> Not Available</br>
+                        <input type="radio" name="status" value="IN" /> <span>IN</span>
+                        <input type="radio" name="status" value="OUT" /> <span>OUT</span>
+                        <input type="radio" name="status" value="NA" /> <span>Not Available</span></br>
                         <!-- <label for="cover" class="form-label">Cover</label>
                     <input type="text" name="cover" class="form-control" id="cover" /></br> -->
 
@@ -67,7 +67,21 @@
 </html>
 <style>
     body {
-        background-color: whitesmoke;
+        background-color: #3E342E;
+    }
+
+    .bg-light {
+        background-color: #918982 !important;
+    }
+
+    h2 {
+        margin-bottom: 25px;
+        color: #DFDEDA;
+    }
+
+    label,
+    span {
+        color: #DFDEDA;
     }
 
     .navigation {
@@ -79,9 +93,7 @@
 
     }
 
-    h2 {
-        margin-bottom: 25px;
-    }
+
 
     .container {
         margin-top: 50px;
@@ -91,5 +103,9 @@
     .btn {
         margin: 40px 0;
         padding: 13px 20px;
+        background-color: #A68F97;
+
+        border: none;
+        outline: none;
     }
 </style>

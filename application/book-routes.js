@@ -6,7 +6,9 @@ const flash = require('express-flash-messages')
 
 router.get('/', async (req, res) => {
     const response = await Book.find({})
+    // res.redirect('/books');
     res.render("home", { data: response })
+
 })
 router.get('/delete/:id', async (req, res) => {
     const id = req.params['id'];

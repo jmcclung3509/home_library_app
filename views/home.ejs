@@ -35,7 +35,7 @@
 
                 <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
                 <% } %>
-                    <h2> Books in your library</h2>
+                    <h2 class="text-center"> Books in Library</h2>
                     <div class="row">
                         <% data.forEach((book)=> { %>
                             <div class="col col-12 col-md-6 col-lg-4">
@@ -84,15 +84,14 @@
                                             <%= book.description %>
                                         </p>
                                         <div class="bottom-item">
-                                            <span class="badge text-bg-secondary">
+                                            <!-- <span class="badge text-bg-secondary">
                                                 <%= book.status %>
-                                            </span>
+                                            </span> -->
                                             <a href="/books/delete/<%= book.id %>"
                                                 class="card-link link-danger">Delete</a>
-                                            <a href="/books/edit/<%= book.id %>" class="card-link ">Edit</a>
+                                            <a href="/books/edit/<%= book.id %>" class="card-link link-edit">Edit</a>
                                         </div>
-                                        <!-- <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a> -->
+
                                     </div>
                                 </div>
                             </div>
@@ -102,22 +101,32 @@
 
 
 
-        <!-- <%=JSON.stringify(data) %> -->
 
 
     </body>
     <style>
         body {
-            background-color: #3E342E;
+            background-color: #cfcdcd;
         }
 
         .bg-light {
-            background-color: #918982 !important;
+            background-color: #7a7a7b !important;
         }
 
         h2 {
             margin-bottom: 40px;
-            color: #DFDEDA;
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        h4,
+        h3,
+        h6 {
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        h6 {
+            width: 45%;
+            text-align: left;
         }
 
         .navigation {
@@ -142,7 +151,7 @@
             min-height: 350px;
             height: fit-content;
             margin-bottom: 50px;
-            background-color: #DFDEDA;
+            background-color: #f0ecec;
             margin-left: auto;
             margin-right: auto;
         }
@@ -154,8 +163,9 @@
 
         .item {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             text-align: center;
+            gap: 20px;
         }
 
         .badge {
@@ -167,10 +177,30 @@
         }
 
         .card-link {
-            background-color: #DFDEDA;
+            /* background-color: #F0F2F2; */
             padding: 5px 10px;
             border-radius: 5px;
             text-decoration: none;
+        }
+
+        .link-danger {
+            background-color: #9F1109;
+            color: white !important;
+        }
+
+        .link-danger:hover {
+            background-color: #F21905;
+            color: white !important;
+        }
+
+        .link-edit {
+            background-color: #011960;
+            color: white;
+        }
+
+        .link-edit:hover {
+            background-color: #179CF0;
+            color: white;
         }
 
         .btn {
@@ -180,9 +210,17 @@
 
         .bottom-item {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 10px;
         }
+
+        .text-bg-secondary {
+            background-color: #179CF0 !important;
+            vertical-align: center;
+            color: black !important;
+            padding-top: 10px;
+        }
     </style>
+
 
 </html>

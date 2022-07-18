@@ -2,10 +2,12 @@
 <html lang="en">
 <%- include('partials/head.ejs') %>
 
+
     <body>
         <div class="navigation">
             <%- include('partials/nav.ejs') %>
         </div>
+
         <div class="container">
             <div class="messages">
                 <% const messages=getMessages() %>
@@ -31,72 +33,75 @@
         </div>
         <div class="container">
             <% if(data.length==0){ %>
-                <h4 class="text-muted"> There are no books in your library</h4>
-
-                <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
-                <% } %>
+                <h4 class="text-muted text-center"> There are no books in your library</h4>
+                <div class="btn-container text-center">
+                    <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
+                </div>
+                <% } else { %>
                     <h2 class="text-center"> Books in Library</h2>
-                    <div class="row">
-                        <% data.forEach((book)=> { %>
-                            <div class="col col-12 col-md-6 col-lg-4">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h4 class="card-title">
-                                            <%= book.bookName %>
-                                        </h4>
-                                        <div class="item">
-                                            <h6 class="card-subtitle mb-2 "><strong> Author: </strong> </h6>
-                                            <h6>
-                                                <%= book.author %>
-                                            </h6>
-                                        </div>
-                                        <div class="item">
-                                            <h6 class="card-subtitle mb-2 "> <strong>Page Count:</strong></h6>
-                                            <h6>
-                                                <%= book.pageCount %> pages
-                                            </h6>
-                                        </div>
-                                        <div class="item">
-                                            <h6 class="card-subtitle mb-2 "><strong> Genre: </strong></h6>
-                                            <h6>
-                                                <%= book.genre %>
-                                            </h6>
-                                        </div>
-                                        <div class="item">
-                                            <h6 class="card-subtitle mb-2"><strong> Location: </strong></h6>
-                                            <h6>
-                                                <%= book.location %>
-                                            </h6>
-                                        </div>
-                                        <div class="item">
-                                            <h6 class="card-subtitle mb-2 "><strong> Added: </strong></h6>
-                                            <h6>
-                                                <%=new Date().getMonth() + 1%>/<%= new Date().getDate() %>/<%=new
-                                                            Date().getFullYear()%>
-                                            </h6>
-                                        </div>
+                    <% } %>
+                        <div class="row">
+                            <% data.forEach((book)=> { %>
+                                <div class="col col-12 col-md-6 col-lg-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <%= book.bookName %>
+                                            </h4>
+                                            <div class="item">
+                                                <h6 class="card-subtitle mb-2 "><strong> Author: </strong> </h6>
+                                                <h6>
+                                                    <%= book.author %>
+                                                </h6>
+                                            </div>
+                                            <div class="item">
+                                                <h6 class="card-subtitle mb-2 "> <strong>Page Count:</strong></h6>
+                                                <h6>
+                                                    <%= book.pageCount %> pages
+                                                </h6>
+                                            </div>
+                                            <div class="item">
+                                                <h6 class="card-subtitle mb-2 "><strong> Genre: </strong></h6>
+                                                <h6>
+                                                    <%= book.genre %>
+                                                </h6>
+                                            </div>
+                                            <div class="item">
+                                                <h6 class="card-subtitle mb-2"><strong> Location: </strong></h6>
+                                                <h6>
+                                                    <%= book.location %>
+                                                </h6>
+                                            </div>
+                                            <div class="item">
+                                                <h6 class="card-subtitle mb-2 "><strong> Added: </strong></h6>
+                                                <h6>
+                                                    <%=new Date().getMonth() + 1%>/<%= new Date().getDate() %>/<%=new
+                                                                Date().getFullYear()%>
+                                                </h6>
+                                            </div>
 
 
 
 
-                                        <h6 class="card-text"><strong>Description: </strong></h6>
-                                        <p>
-                                            <%= book.description %>
-                                        </p>
-                                        <div class="bottom-item">
-                                            <!-- <span class="badge text-bg-secondary">
-                                                <%= book.status %>
-                                            </span> -->
-                                            <a href="/books/delete/<%= book.id %>"
-                                                class="card-link link-danger">Delete</a>
-                                            <a href="/books/edit/<%= book.id %>" class="card-link link-edit">Edit</a>
-                                        </div>
+                                            <h6 class="card-text"><strong>Description: </strong></h6>
+                                            <p>
+                                                <%= book.description %>
+                                            </p>
+                                            <div class="bottom-item">
+                                                <span class="badge text-bg-secondary">
+                                                    <%= book.rating %>
+                                                </span>
+                                                <a href="/books/delete/<%= book.id %>"
+                                                    class="card-link link-danger">Delete</a>
+                                                <a href="/books/edit/<%= book.id %>"
+                                                    class="card-link link-edit">Edit</a>
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <% }) %>
-                    </div>
+                                <% }) %>
+                        </div>
         </div>
 
 
@@ -106,12 +111,10 @@
     </body>
     <style>
         body {
-            background-color: #cfcdcd;
+            background-color: #dcd9d9;
         }
 
-        .bg-light {
-            background-color: #7a7a7b !important;
-        }
+
 
         h2 {
             margin-bottom: 40px;
@@ -218,7 +221,7 @@
             background-color: #179CF0 !important;
             vertical-align: center;
             color: black !important;
-            padding-top: 10px;
+            padding: 10px;
         }
     </style>
 

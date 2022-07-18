@@ -4,13 +4,14 @@
 
     <body>
 
-        <div class="wrapper">
+
+        <div class="navigation">
+            <%- include('partials/nav.ejs') %>
+        </div>
 
 
-            <div class="navigation">
-                <%- include('partials/nav.ejs') %>
-            </div>
-            <div class="main">
+        <div class="main">
+            <div class="wrapper">
                 <div class="text-center">
                     <h1 class="display-1">Home Library </br> Application</h1>
                 </div>
@@ -25,13 +26,17 @@
         width: 100%;
         align-items: center;
         height: 100%;
+
+    }
+
+    .main {
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
         background-color: #F0F2F2;
         overflow: hidden;
-        background-image: url("/images/spiderman.jpg");
+        background-image: url("/images/spiderman.jpg")
     }
 
     .wrapper {

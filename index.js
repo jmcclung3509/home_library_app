@@ -31,10 +31,10 @@ app.use(express.static('public'))
 app.use('/', router);
 
 app.use('/books', bookRouter)
-app.get("/", (req, res) => {
-    res.render("homepage", { images: images })
+// app.get("/", (req, res) => {
+//     res.render("homepage", { images: images })
 
-})
+// })
 
 app.listen(PORT, () => {
     console.log('Server is listening')

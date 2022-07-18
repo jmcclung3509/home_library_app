@@ -10,12 +10,12 @@ module.exports = mongoose.Schema({
     // publisher: { type: String, required: true },
     // publishDate: { type: String },
     createdAt: { type: Date, default: Date.now },
-    // status: {
-    //     type: String,
-    //     enum: ['IN', 'OUT', 'NA'],
-    //     default: 'IN',
-    //     required: true
-    // },
+    rating: {
+        type: String,
+        enum: ['👎', '👍', '👍👍'],
+        default: '👍',
+        required: true
+    },
     genre: String,
 
 

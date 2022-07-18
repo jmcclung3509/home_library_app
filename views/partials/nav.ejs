@@ -10,6 +10,11 @@
                 <a class="nav-link active" aria-current="page" href="/">Library Home</a>
                 <a class="nav-link" href="/books/add-book">Add Book</a>
                 <a class="nav-link" href="/books">Show Books</a>
+                <form class="d-flex" roll=" search" action="/books/search" method="get">
+                    <input class="form-control mr-sm-2" type="search" aria-label="Search" name="dsearch"
+                        placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
 
             </div>
         </div>
@@ -20,7 +25,17 @@
         color: rgba(0, 0, 0, 0.9);
     }
 
+    .navbar {
+        padding: 15px !important;
+
+    }
+
     .nav-link:hover {
         font-weight: 700;
     }
+
+    /* 
+    .bg-light {
+        background-color: #f4f0f0 !important;
+    } */
 </style>

@@ -11,9 +11,9 @@
                 <a class="nav-link" href="/books/add-book">Add Book</a>
                 <a class="nav-link" href="/books">Show Books</a>
                 <form class="d-flex" roll=" search" action="/books/search" method="get">
-                    <input class="form-control mr-sm-2" type="search" aria-label="Search" name="dsearch"
+                    <input class="form-control mr-sm-2 search-bar" type="search" aria-label="Search" name="dsearch"
                         placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-secondary my-2 my-sm-0 search-btn " type="submit">Search</button>
                 </form>
 
             </div>
@@ -37,5 +37,16 @@
 
     .bg-light {
         background-color: #c6c6c6 !important;
+    }
+
+    .search-bar {
+        margin-left: 20px;
+        height: 38px;
+    }
+
+    .search-btn {
+        height: 38px;
+        padding: 5px 12px !important;
+
     }
 </style>

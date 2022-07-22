@@ -12,7 +12,7 @@ const images = [{ image: "https://unsplash.com/photos/o4c2zoVhjSw" }]
 
 const app = express();
 
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5001;
 app.use(flash())
 app.use(
     session({

@@ -67,6 +67,9 @@
     h2 {
         margin-bottom: 25px;
         color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        width: 100%;
+        margin-bottom: 50px;
     }
 
     label,
@@ -100,23 +103,25 @@
 
     }
 
+    .btn:hover {
+        background-color: #179CF0;
+        color: black;
+        font-weight: bold;
+        border: none;
+        outline: none;
+    }
+
     @media screen and (max-width: 768px) {
         .row form {
-            width: 60%;
+            width: 60% !important;
+            margin: auto;
         }
 
         .row h2 {
             width: 100%;
+            margin-bottom: 50px;
         }
     }
 
-    @media screen and (max-width: 12002px) {
-        .row form {
-            width: 40%;
-        }
-
-        .row h2 {
-            width: 100%;
-        }
-    }
+    @media screen and (max-width: 1200px) {}
 </style>

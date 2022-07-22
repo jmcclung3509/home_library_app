@@ -35,7 +35,7 @@
             <% if(data.length==0){ %>
                 <h4 class="text-muted text-center"> There are no books in your library</h4>
                 <div class="btn-container text-center">
-                    <a href="/books/add-book/" class="btn btn-primary">Add Books</a>
+                    <a href="/books/add-book/" class="btn btn-primary">Add a Book</a>
                 </div>
                 <% } else { %>
                     <h2 class="text-center"> Books in Library</h2>
@@ -102,6 +102,9 @@
                                 </div>
                                 <% }) %>
                         </div>
+                        <div class="btn-container text-center">
+                            <a href="/books/add-book/" class="btn btn-primary">Add a Book</a>
+                        </div>
         </div>
 
 
@@ -117,7 +120,7 @@
 
 
         h2 {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: rgba(0, 0, 0, 0.9);
         }
 

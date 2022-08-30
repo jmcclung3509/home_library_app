@@ -45,6 +45,7 @@
                                 <div class="col col-12 col-md-6 col-lg-4">
                                     <div class="card" style="width: 18rem;">
                                         <div class="card-body">
+                                            <i class="fa fa-book-open"></i>
                                             <h4 class="card-title">
                                                 <%= book.bookName %>
                                             </h4>
@@ -55,7 +56,8 @@
                                                 </h6>
                                             </div>
                                             <div class="item">
-                                                <h6 class="card-subtitle mb-2 "> <strong>Page Count:</strong></h6>
+                                                <h6 class="card-subtitle mb-2 "> <strong>Page Count:</strong>
+                                                </h6>
                                                 <h6>
                                                     <%= book.pageCount %> pages
                                                 </h6>
@@ -75,8 +77,8 @@
                                             <div class="item">
                                                 <h6 class="card-subtitle mb-2 "><strong> Added: </strong></h6>
                                                 <h6>
-                                                    <%=new Date().getMonth() + 1%>/<%= new Date().getDate() %>/<%=new
-                                                                Date().getFullYear()%>
+                                                    <%=new Date().getMonth() + 1%>/<%= new Date().getDate() %>/
+                                                            <%=new Date().getFullYear()%>
                                                 </h6>
                                             </div>
 
